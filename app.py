@@ -75,6 +75,15 @@ def favicon() -> Response:
     return Response(status_code=204)
 
 
+@app.get("/health", include_in_schema=False)
+def health() -> dict:
+    router = getattr(app.state, "router", None)
+    return {
+        "status": "ok" if router is not None else "degraded",
+        "loaded": router is not None,
+    }
+
+
 @app.post("/decide")
 def decide(req: DecideRequest) -> dict:
     router = getattr(app.state, "router", None)

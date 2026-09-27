@@ -3,6 +3,8 @@
 Minimal FastAPI wrapper around [Laya](https://huggingface.co/convaiinnovations/laya) `Router`.
 One text in, typed answers out — no text generation, nothing to hallucinate.
 
+![Laya Playground — calibrated answers UI](docs/image.png)
+
 Flow: `state + typed questions -> one forward pass -> calibrated answers`.
 
 Question types: `choice` (department), `score` (urgency), `noul` (churn risk).
@@ -10,6 +12,7 @@ Question types: `choice` (department), `score` (urgency), `noul` (churn risk).
 ## Endpoints
 
 - `GET /` — Playground UI (`static/index.html` + `static/app.js`)
+- `GET /health` — `{"status": "ok"|"degraded", "loaded": bool}`
 - `POST /decide` — `{ state, questions }` → `router.predict()` result
 
 ## Run
