@@ -61,3 +61,8 @@ hit **Decide** — cards render with confidence bars + raw JSON below.
 - `app.py` — API + lifespan preload + `to_jsonable()` numpy coercion
 - `static/` — UI (no build step)
 - `requirements.txt` — `fastapi`, `uvicorn[standard]`, `laya`
+
+## References
+
+- Laya on GitHub: https://github.com/NandhaKishorM/laya
+- Laya on Hugging Face: https://huggingface.co/convaiinnovations/laya
